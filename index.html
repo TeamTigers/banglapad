@@ -1,102 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>বাংলা লেখার জন্য</title>
-  <style>
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    background: #2d2d2d;
-  }
-  #banglapad {
-    margin-top: 50px;
-    width: 100%;
-    height: calc(100% - 70px);
-    position: absolute;
-    padding: 70px;
-    font-size: 20px;
-    border: none;
-    background: #2d2d2d;
-    font-weight: normal;
-    color: #b2b2b2;
-    line-height: 25px;
-    vertical-align: middle;
-  }
-  #banglapad:focus {
-    outline: none;
-  }
-  .btn{
-    position: absolute;
-    width: 150px;
-    height: 50px;
-    font-size: 15px;
-    border: 1px;
-    color: #cacaca;
-    background: #555555;
-  }
-  .shareButton {
-    position: absolute;
-    right: 0px;
-    width: 150px;
-    height: 50px;
-    font-size: 15px;
-    border: 1px;
-    color: #fff;
-    background: #4080ff;
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>বাংলা লেখার জন্য</title>
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Avro" />
+    <meta name="apple-mobile-web-app-title" content="Avro" />
+    <meta name="theme-color" content="#DB4437" />
+    <meta name="msapplication-navbutton-color" content="#DB4437" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="msapplication-starturl" content="/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  .bn {
-    position: absolute;
-    top: 0;
-    right: 46%;
-    margin-top: 10px;
-    color: #ddd;
-    font-weight: bold;
-    font-size: 20px;
-  }
+    <link rel="icon" sizes="128x128" href="assets/img/avro128.png" />
+    <link rel="apple-touch-icon" sizes="128x128" href="assets/img/avro128.png" />
+    <link rel="icon" sizes="192x192" href="assets/img/avro192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="assets/img/avro192.png" />
+    <link rel="icon" sizes="256x256" href="assets/img/avro256.png" />
+    <link rel="apple-touch-icon" sizes="256x256" href="assets/img/avro256.png" />
+    <link rel="icon" sizes="384x384" href="assets/img/avro384.png" />
+    <link rel="apple-touch-icon" sizes="384x384" href="assets/img/avro384.png" />
+    <link rel="icon" sizes="512x512" href="assets/img/avro512.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="assets/img/avro512.png" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+      @import url("https://fonts.maateen.me/charukola-ultra-light/font.css");
 
-  </style>
-</head>
-<body>
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '411649629179728',
-        xfbml      : true,
-        version    : 'v2.8'
-      });
-      FB.AppEvents.logPageView();
-    };
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: #182125;
+        font-family: "Montserrat", sans-serif;
+      }
+      #banglapad {
+        margin-top: 50px;
+        width: 100%;
+        height: calc(100% - 70px);
+        position: absolute;
+        padding: 70px;
+        font-size: 20px;
+        border: none;
+        background: #09141a;
+        font-weight: normal;
+        color: #b2b2b2;
+        line-height: 25px;
+        vertical-align: middle;
+      }
+      #banglapad:focus {
+        outline: none;
+        font-family: "CharukolaUltraLight", sans-serif;
+        font-weight: 600;
+      }
+      .btn {
+        font-family: "Montserrat", sans-serif;
+        position: absolute;
+        width: 200px;
+        height: 50px;
+        font-size: 15px;
+        border: 1px;
+        border-radius: 5px;
+        color: #f0f0f0;
+        background: #00695c;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .btn span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
 
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "//connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <button class="btn" data-clipboard-target="#banglapad">Copy to Clipboard</button>
-  <div class="bn">বাংলা লেখার জন্য [অভ্র কী-বোর্ড]</div>
-  <button type="button" class="shareButton">Post to facebook</button>
-  <textarea id="banglapad"></textarea>
-  <code style="position:absolute; bottom:0; color:#ccc;"> কী-বোর্ড সুইচ: [ctrl + m] </code>
-  <script
-    src="https://code.jquery.com/jquery-1.12.4.min.js"
-    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-    crossorigin="anonymous"></script>
-  <script src="assets/js/jquery.ime.js"></script>
-  <script src="assets/js/jquery.ime.selector.js"></script>
-  <script src="assets/js/jquery.ime.preferences.js"></script>
-  <script src="assets/js/bn-avro.js"></script>
-  <script src="assets/js/clipboard.min.js"></script>
-  <script type="text/javascript" src="assets/js/app.js"></script>
-</body>
+      .btn span:after {
+        content: "\276F";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+
+      .btn:hover span {
+        padding-right: 25px;
+      }
+
+      .btn:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+      .shareButton {
+        font-family: "Montserrat", sans-serif;
+        position: absolute;
+        right: 0px;
+        width: 150px;
+        height: 50px;
+        font-size: 15px;
+        border: 1px;
+        border-radius: 5px;
+        color: #fff;
+        background: #2c71fa;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .bn {
+        font-family: "CharukolaUltraLight", sans-serif;
+        position: absolute;
+        top: 0;
+        right: 46%;
+        margin-top: 10px;
+        color: rgb(236, 123, 16);
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      @media (max-width: 600px) {
+        .bn {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "411649629179728",
+          xfbml: true,
+          version: "v2.8",
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+          return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
+    <button class="btn" data-clipboard-target="#banglapad"><span>Copy to Clipboard</span></button>
+    <div class="bn">বাংলা লেখার জন্য [অভ্র কী-বোর্ড]</div>
+    <button type="button" class="shareButton">Post to facebook</button>
+    <textarea id="banglapad"></textarea>
+    <code style="position: absolute; bottom: 0; color: #ccc"> কী-বোর্ড সুইচ: [ctrl + m] </code>
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/jquery.ime.js"></script>
+    <script src="assets/js/jquery.ime.selector.js"></script>
+    <script src="assets/js/jquery.ime.preferences.js"></script>
+    <script src="assets/js/bn-avro.js"></script>
+    <script src="assets/js/clipboard.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("service-worker.js")
+            .then((reg) => {
+              console.log("Service successfully registered", reg);
+            })
+            .catch((err) => {
+              console.log("Service worker failed", err);
+            });
+        });
+      }
+    </script>
+  </body>
 </html>

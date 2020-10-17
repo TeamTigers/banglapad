@@ -1,0 +1,32 @@
+{
+    "name": "Avro",
+    "short_name": "Avro",
+    "lang": "en-US",
+    "start_url": "index.html",
+    "display": "standalone",
+    "theme_color": "#DB4437",
+    "background_color": "#FFFFFF",
+    "icons": [
+        {
+          "src": "assets/img/avro128.png",
+          "sizes": "128x128"
+        },
+        {
+          "src": "assets/img/avro192.png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "assets/img/avro256.png",
+          "sizes": "256x256"
+        },
+        {
+          "src": "assets/img/avro384.png",
+          "sizes": "384x384"
+        },
+        {
+          "src": "assets/img/avro512.png",
+          "sizes": "512x512",
+          "purpose": "any maskable"
+        }
+      ]
+}
